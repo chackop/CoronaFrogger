@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
 		float verticalMovement = Input.GetAxis ("Vertical");
 
 		if (!jumped) {
-			// The frog didn't move.
+			// The player didn't move.
 			Vector2 targetPosition = Vector2.zero;
 			bool tryingToMove = false;
 
@@ -54,13 +54,13 @@ public class Player : MonoBehaviour {
 				}
 			}
 		} else {
-			// The frog moved.
+			// The player moved.
 			if (horizontalMovement == 0 && verticalMovement == 0) {
 				jumped = false;
 			}
 		} 
 
-		// Keep the frog inside bounds.
+		// Keep the player inside bounds.
 		if (transform.position.y < -(Screen.height / 100f) / 2f) {
 			transform.position = new Vector3 (transform.position.x, transform.position.y + jumpDistance);
 		}
